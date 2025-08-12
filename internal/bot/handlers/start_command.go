@@ -11,7 +11,7 @@ func StartHandler(ctx *telegohandler.Context, update telego.Update) error {
 	view := views.CreateMainMenu()
 	message := telegoutil.
 		Message(telegoutil.ID(update.Message.Chat.ID), view.Text).
-		WithParseMode("HTML").
+		WithParseMode(telego.ModeHTML).
 		WithReplyMarkup(view.Keyboard)
 	if _, err := ctx.Bot().SendMessage(ctx, message); err != nil {
 		return err

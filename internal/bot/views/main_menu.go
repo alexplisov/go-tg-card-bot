@@ -4,7 +4,9 @@ import (
 	"github.com/mymmrac/telego/telegoutil"
 )
 
-const text = `
+func CreateMainMenu() *View {
+	return &View{
+		Text: `
 <b>👋 Приветствую!</b>
 
 🙂 Меня зовут Алексей.
@@ -12,11 +14,7 @@ const text = `
 🤖 Я разрабатываю Telegram-ботов на TypeScript, Go и Python.
 
 💎 Если хочешь себе бота, то оставь заявку и я помогу тебе с этим.
-`
-
-func CreateMainMenu() *View {
-	return &View{
-		Text: text,
+		`,
 		Keyboard: telegoutil.InlineKeyboard(
 			telegoutil.InlineKeyboardRow(
 				telegoutil.InlineKeyboardButton("Образование").WithCallbackData("education"),

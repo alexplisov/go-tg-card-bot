@@ -1,17 +1,18 @@
 package views
 
 import (
-	"github.com/mymmrac/telego"
 	"github.com/mymmrac/telego/telegoutil"
 )
 
-const test = `
-`
-
-func CreateEducationView() *telego.View {
+func CreateEducationView() *View {
 	return &View{
-		Text:     text,
+		Text: `
+👨‍🎓 Я имею диплом бакалавра в области прикладной информатики от Уральского Государственного Экономического Университета.
+		`,
 		Keyboard: telegoutil.InlineKeyboard(
-			telegoutil.InlineKeyboardButton("Back").WithCallbackData("back"),
+			telegoutil.InlineKeyboardRow(
+				telegoutil.InlineKeyboardButton("Back").WithCallbackData("back"),
+			),
 		),
 	}
+}

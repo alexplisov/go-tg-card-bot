@@ -7,8 +7,8 @@ import (
 	"github.com/mymmrac/telego/telegoutil"
 )
 
-func HandleInlineMenuEducation(ctx *telegohandler.Context, query telego.CallbackQuery) error {
-	view := views.CreateEducationView()
+func HandleInlineMenuBack(ctx *telegohandler.Context, query telego.CallbackQuery) error {
+	view := views.CreateMainMenu()
 	if _, err := ctx.Bot().EditMessageText(
 		ctx.Context(),
 		telegoutil.EditMessageText(

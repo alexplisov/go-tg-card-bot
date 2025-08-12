@@ -7,6 +7,7 @@ import (
 
 type Config struct {
 	TelegramBotToken string `env:"TELEGRAM_BOT_TOKEN"`
+	OwnerChatID      int64  `env:"OWNER_CHAT_ID"`
 }
 
 func LoadConfig() (*Config, error) {

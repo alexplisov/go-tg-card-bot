@@ -14,7 +14,7 @@ func Run() error {
 		return fmt.Errorf("error loading config: %w", err)
 	}
 
-	botHandler, err := bot.SetupBotHandler(cfg.TelegramBotToken)
+	botHandler, err := bot.SetupBotHandler(cfg.TelegramBotToken, cfg.OwnerChatID)
 	if err != nil {
 		return fmt.Errorf("error setting up bot: %w", err)
 	}
